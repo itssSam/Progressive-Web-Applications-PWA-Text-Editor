@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Your App Title',
+        title: 'JATE',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
@@ -29,19 +29,20 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Your App Name',
-        short_name: 'App',
-        description: 'My App Description',
+        name: 'JUST ANOTHER TEXT EDITOR',
+        short_name: 'JATE',
+        description: 'PW APP FOR EDITING TEXT',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         start_url: '/',
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            src: path.resolve("src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
           },
-        ],
+        ]
       }),
     ],
     module: {
@@ -54,9 +55,13 @@ module.exports = () => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env'],
+              presets: ["@babel/preset-env"],
+              plugins: [
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/transform-runtime",
+              ],
             },
           },
         },
