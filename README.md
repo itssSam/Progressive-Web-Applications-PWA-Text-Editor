@@ -6,7 +6,7 @@ The PWA Text Editor project is a progressive web application designed for seamle
 
 ## Usage
 
-![Alt text](<../Assets/Screenshot 2024-01-30 172212.png>)
+![Alt text](<Assets/Screenshot 2024-01-30 172212.png>)
 
 ## Deployed app 
 
